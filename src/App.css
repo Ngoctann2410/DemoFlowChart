@@ -3,6 +3,14 @@
     padding:0;
     text-decoration: none;
 }
+
+body {
+    background: rgb(251, 251, 252);
+    
+    
+    
+
+  }
 .container{
     display:flex;
 }
@@ -44,7 +52,7 @@ main{
 }
 .active{
     background: lightskyblue;
-    color: #000;
+    color: #050505;
 }
 .icon, .link_text{
     font-size: 20px;

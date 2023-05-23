@@ -6,12 +6,28 @@ import {
     FaRegChartBar,
     FaCommentAlt,
     FaShoppingBag,
+    FaRegUserCircle,
+    FaLocationArrow,
     FaThList
 }from "react-icons/fa";
 import { NavLink } from 'react-router-dom';
 
+import {
+    AiOutlineMenu,
+    AiOutlineSearch,
+    AiOutlineClose,
+    AiFillTag,
+  } from "react-icons/ai";
+  import {
+    BsFillPersonLinesFill,
+    BsFillSaveFill,
+    BsPersonCheck,
+  } from "react-icons/bs";
+
+  import { FiGrid } from "react-icons/fi";
 
 const Sidebar = ({children}) => {
+    const [nav, setNav] = useState(false);
     const[isOpen ,setIsOpen] = useState(false);
     const toggle = () => setIsOpen (!isOpen);
     const menuItem=[
@@ -23,7 +39,7 @@ const Sidebar = ({children}) => {
         {
             path:"/about",
             name:"About",
-            icon:<FaUserAlt/>
+            icon:<FaRegUserCircle/>
         },
         {
             path:"/analytics",
@@ -37,22 +53,24 @@ const Sidebar = ({children}) => {
         },
         {
             path:"/product",
-            name:"Product",
-            icon:<FaShoppingBag/>
+            name:"Choose Charts",
+            icon:<FaLocationArrow/>
         },
         {
             path:"/productList",
-            name:"Product List",
+            name:"Options",
             icon:<FaThList/>
         }
     ]
     return (
+
+        
         <div className="container">
            <div style={{width: isOpen ? "200px" : "50px"}} className="sidebar">
                <div className="top_section">
-                   <h1 style={{display: isOpen ? "block" : "none"}} className="logo">Logo</h1>
+                   <h1 style={{display: isOpen ? "block" : "none"}} className="logo">Charts <span className='font-bold'>Design</span></h1>
                    <div style={{marginLeft: isOpen ? "50px" : "0px"}} className="bars">
-                       <FaBars onClick={toggle}/>
+                       <AiOutlineMenu onClick={toggle}/>
                    </div>
                </div>
                {
@@ -64,8 +82,29 @@ const Sidebar = ({children}) => {
                    ))
                }
            </div>
+
+           
            <main>{children}</main>
+
+
+           <button className='bg-black text-black hidden md:flex items-center px-2 rounded-full'>
+        <FiGrid size={40} onClick={()=> setNav(!nav)} className='mr-3 ' 
+        
+        
+        /> Options
+        {/* <AiOutlineClosed>
+            onClick={()=> setNav(!nav)}
+          size={50}
+          className='absolute right-4 top-4 cursor-pointer'
+          </AiOutlineClosed> */}
+        
+      </button>
+      
+      
         </div>
+        
+
+        
     );
 };
 
