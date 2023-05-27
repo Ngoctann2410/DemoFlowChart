@@ -52,7 +52,7 @@
   
   .dndflow .reactflow-wrapper {
     flex-grow: 1;
-    height: 200%;
+    height: 150%;
   }
   
   .dndflow .selectall {
@@ -101,4 +101,6 @@
   .validationflow .react-flow__handle-valid {
     background: #55dd99;
   }
+  
+
   

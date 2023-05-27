@@ -17,7 +17,7 @@ import {
     AiOutlineSearch,
     AiOutlineClose,
     AiFillTag,
-  } from "react-icons/ai";
+  } from "react-icons/ai";   2
   import {
     BsFillPersonLinesFill,
     BsFillSaveFill,
@@ -85,8 +85,9 @@ const Navbar = ({children}) => {
            <main>{children}</main>
 
 
-           <button className='bg-black text-black hidden md:flex items-center px-2 rounded-full'>
-        <FiGrid size={40} onClick={()=> setNav(!nav)} className='mr-3 ' 
+           <button className='bg-black text-black hidden md:flex items-center px-4 rounded-full'>
+        <FiGrid size={50} onClick={()=> setNav(!nav)} className='absolute right-4 top-4 cursor-pointer' 
+        
         
         
         /> Options

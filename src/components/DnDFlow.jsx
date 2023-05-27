@@ -17,13 +17,14 @@ const initialNodes = [
     id: '1',
     type: 'input',
     data: { label: 'input' },
-    position: { x: 500, y: 300 },
+    position: { x: 8, y: 2 },
+    
   },
   
 ];
 
 let id = 0;
-const getId = () => `dndnode_${id++}`;
+const getId = () => `dnd_${id++}`;
 
 const DnDFlow = () => {
   const reactFlowWrapper = useRef(null);
@@ -58,7 +59,7 @@ const DnDFlow = () => {
         id: getId(),
         type,
         position,
-        data: { label: `${type} node` },
+        data: { label: `${type} ` },
       };
 
       setNodes((nds) => nds.concat(newNode));
